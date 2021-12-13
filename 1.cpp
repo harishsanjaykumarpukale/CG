@@ -120,12 +120,12 @@ int main(int argc, char* argv[]) {
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Line");
 
-	if (ch == 2) {
+	if (ch == 1)
+		glutDisplayFunc(dispLine);
+	else {
 		glutMouseFunc(mouse);
 		glutDisplayFunc(display);
 	}
-	else
-		glutDisplayFunc(dispLine);
 
 	init();
 	glutMainLoop();
