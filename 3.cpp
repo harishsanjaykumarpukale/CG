@@ -14,7 +14,7 @@ void spindisplay() {
 void square() {
 	glBegin(GL_QUADS);
 
-	glColor3f(1, 0, 0);
+	glColor3f(1, 0, 0); // glColor3i will not work
 	glVertex2f(x, y);
 
 	glColor3f(0, 1, 0);
@@ -37,7 +37,6 @@ void mouse(int btn, int st, int x, int y) {
 }
 
 void disp() {
-	glClear(GL_COLOR_BUFFER_BIT);
 	square();
 	glFlush();
 }
@@ -49,7 +48,9 @@ void dispD() {
 }
 void init() {
 	glClearColor(1, 1, 1, 1);
-	glColor3i(1, 0, 0);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
 	gluOrtho2D(-2, 2, -2, 2);
 }
 
@@ -70,6 +71,7 @@ int main(int argc, char* argv[]) {
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(0, 0);
 	sb = glutCreateWindow("single buffer");
+	glutSetWindow(sb);
 	glutDisplayFunc(disp);
 	glutReshapeFunc(reshape);
 	init();
@@ -78,6 +80,7 @@ int main(int argc, char* argv[]) {
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(500, 0);
 	db = glutCreateWindow("double");
+	glutSetWindow(db);
 	init();
 	glutDisplayFunc(dispD);
 	glutMouseFunc(mouse);

@@ -58,6 +58,8 @@ void display() {}
 void init() {
 	glClearColor(1, 1, 1, 1);
 	glClear(GL_COLOR_BUFFER_BIT);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
 	gluOrtho2D(-250, 250, -250, 250);
 }
 
