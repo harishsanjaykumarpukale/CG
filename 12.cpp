@@ -7,10 +7,13 @@ void polygon(int a, int b, int c, int d) {
 	glBegin(GL_POLYGON);
 	glColor3fv(ver[a]);
 	glVertex3fv(ver[a]);
+
 	glColor3fv(ver[b]);
 	glVertex3fv(ver[b]);
+	
 	glColor3fv(ver[c]);
 	glVertex3fv(ver[c]);
+	
 	glColor3fv(ver[d]);
 	glVertex3fv(ver[d]);
 	glEnd();

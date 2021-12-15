@@ -28,6 +28,7 @@ void display() {
 	glTranslatef(100, 100, 0);
 	glRotatef(angle, 0, 0, 1);
 	glTranslatef(-100, -100, 0);
+
 	glColor3f(1, 1, 0);
 	dH();
 	glPopMatrix();
